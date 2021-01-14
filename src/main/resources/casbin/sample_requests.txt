@@ -1,0 +1,22 @@
+
+patient, /patients/123456, GET
+patient, /patients/123456/Tom Jones, POST
+patient, /patients/123456/Tommy Jones, PUT
+patient, /patients/123456/labs/BLAH/123, POST
+patient, /patients, GET
+patient, /doctors/Evil, POST
+
+doctor, /patients/123456, GET
+doctor, /patients/123456/Tom Jones, POST
+doctor, /patients/123456/Tommy Jones, PUT
+doctor, /patients/123456/labs/BLAH/123, POST
+doctor, /patients, GET
+doctor, /doctors/Evil, POST
+
+ADMIN, /patients/123456, GET
+ADMIN, /patients/123456/Tom Jones, POST
+ADMIN, /patients/123456/Tommy Jones, PUT
+ADMIN, /patients/123456/labs/BLAH/123, POST
+ADMIN, /patients, GET
+ADMIN, /doctors/Evil, POST
+admin, /doctors/Evil, POST
