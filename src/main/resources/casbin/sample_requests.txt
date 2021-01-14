@@ -6,12 +6,26 @@ patient, /patients/123456/labs/BLAH/123, POST
 patient, /patients, GET
 patient, /doctors/Evil, POST
 
+guardian, /patients/123456, GET
+guardian, /patients/123456/Tom Jones, POST
+guardian, /patients/123456/Tommy Jones, PUT
+guardian, /patients/123456/labs/BLAH/123, POST
+guardian, /patients, GET
+guardian, /doctors/Evil, POST
+
 doctor, /patients/123456, GET
 doctor, /patients/123456/Tom Jones, POST
 doctor, /patients/123456/Tommy Jones, PUT
 doctor, /patients/123456/labs/BLAH/123, POST
 doctor, /patients, GET
 doctor, /doctors/Evil, POST
+
+resident, /patients/123456, GET
+resident, /patients/123456/Tom Jones, POST
+resident, /patients/123456/Tommy Jones, PUT
+resident, /patients/123456/labs/BLAH/123, POST
+resident, /patients, GET
+resident, /doctors/Evil, POST
 
 ADMIN, /patients/123456, GET
 ADMIN, /patients/123456/Tom Jones, POST
@@ -20,3 +34,4 @@ ADMIN, /patients/123456/labs/BLAH/123, POST
 ADMIN, /patients, GET
 ADMIN, /doctors/Evil, POST
 admin, /doctors/Evil, POST
+
