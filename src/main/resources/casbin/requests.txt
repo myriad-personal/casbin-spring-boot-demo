@@ -1,0 +1,18 @@
+alice, /patients/history, GET
+alice, /patients/profile, POST
+alice, /patients/foo, GET
+alice, /patients/labs/BLAH/123, POST
+alice, /doctors/profile, GET
+alice, /doctors/profile, POST
+
+bob, /patients/history, GET
+bob, /patients/history, POST
+bob, /patients/labs/BLAH/123, POST
+bob, /doctors/profile, GET
+bob, /doctors/goo, POST
+
+ADMIN, /patients/history, GET
+ADMIN, /patients/profile, GET
+ADMIN, /patients/foo, GET
+ADMIN, /patients/labs/BLAH/123, POST
+admin, /doctors/profile, GET

@@ -1,0 +1,14 @@
+
+# Patient Endpoints
+#--------------------
+p, patient, /patients/:patientId, GET
+p, patient, /patients/:patientId/:patientName, (POST)|(POST)
+p, doctor, /patients/:patientId/labs/:labName/:result, POST
+p, doctor, /patients, GET
+
+# Doctor Endpoints
+#-------------------
+p, doctor, /doctors/:name, (GET)|(POST)
+
+g, alice, patient
+g, bob, doctor
