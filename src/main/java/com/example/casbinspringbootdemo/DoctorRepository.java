@@ -3,7 +3,6 @@ package com.example.casbinspringbootdemo;
 import org.springframework.stereotype.Repository;
 import org.springframework.util.Assert;
 
-import javax.persistence.EntityNotFoundException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;

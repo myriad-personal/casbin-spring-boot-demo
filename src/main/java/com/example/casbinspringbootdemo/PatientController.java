@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/patients")
@@ -20,19 +19,22 @@ public class PatientController {
 
     @GetMapping("/{recordId}")
     public ResponseEntity<Patient> patientByRecordId(@PathVariable("recordId") String recordId) {
-        Optional<Patient> patient = patientRepository.findByRecordId(recordId);
-        System.out.println("Found: " + patient);
-        return ResponseEntity.of(patient);
+        Assert.hasText(recordId, "invalid null/blank record id");
+        return ResponseEntity.of(patientRepository.findByRecordId(recordId.trim()));
     }
 
     @PostMapping("/{recordId}/{name}")
     public void newPatient(@PathVariable("recordId") String recordId, @PathVariable("name") String name) {
-        patientRepository.store(new Patient(name, recordId));
+        Assert.hasText(recordId, "invalid null/blank record id");
+        Assert.hasText(name, "invalid null/blank lab name");
+        patientRepository.store(new Patient(name.trim(), recordId.trim()));
     }
 
     @PutMapping("/{recordId}/{name}")
     public void updateName(@PathVariable("recordId") String recordId, @PathVariable("name") String name) {
-        patientRepository.findByRecordId(recordId).get().updateName(name);
+        Assert.hasText(recordId, "invalid null/blank record id");
+        Assert.hasText(name, "invalid null/blank lab name");
+        patientRepository.findByRecordId(recordId.trim()).get().updateName(name.trim());
     }
 
     @PostMapping("/{recordId}/labs/{lab}/{result}")
@@ -40,8 +42,7 @@ public class PatientController {
         Assert.hasText(recordId, "invalid null/blank record id");
         Assert.hasText(lab, "invalid null/blank lab name");
         Assert.hasText(result, "invalid null/blank result value");
-        Optional<Patient> patient = patientRepository.findByRecordId(recordId);
-        return patient.get().getPatientHistory().recordLab(lab, result).getLabResults(lab);
+        return patientRepository.findByRecordId(recordId.trim()).get().recordLab(lab.trim(), result.trim());
     }
 
     @GetMapping

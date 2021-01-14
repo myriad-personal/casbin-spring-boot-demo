@@ -1,0 +1,216 @@
+_type: export
+__export_format: 4
+__export_date: 2021-01-14T08:14:04.662Z
+__export_source: insomnia.desktop.app:v2020.5.2
+resources:
+  - _id: req_1f2b76cafb714eaba75a9f55e932dd30
+    parentId: fld_ac4a94d349de4c13a80e9e778095240c
+    modified: 1610594751305
+    created: 1610592740823
+    url: http://localhost:8080/patients/{% prompt 'Record ID', '', '', '', false,
+      true %}/{% prompt 'Name', '', '', '', false, true %}
+    name: Post Patient Record
+    description: ""
+    method: POST
+    body: {}
+    parameters: []
+    headers:
+      - name: user-subject
+        value: alice
+        description: ""
+        id: pair_0c0f422013da4506b8860395dbd5ae57
+    authentication: {}
+    metaSortKey: -1610592638586
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_ac4a94d349de4c13a80e9e778095240c
+    parentId: wrk_39c27bc5d83b4ae68c4806110f438fba
+    modified: 1610592649437
+    created: 1610592649437
+    name: Casbin Demo
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1610592649437
+    _type: request_group
+  - _id: wrk_39c27bc5d83b4ae68c4806110f438fba
+    parentId: null
+    modified: 1609869726949
+    created: 1609869726949
+    name: Insomnia
+    description: ""
+    scope: null
+    _type: workspace
+  - _id: req_9af2fb1eacca47c39321debce36323dd
+    parentId: fld_ac4a94d349de4c13a80e9e778095240c
+    modified: 1610608681042
+    created: 1610594797691
+    url: http://localhost:8080/patients/{% prompt 'Record ID', '', '', '', false,
+      true %}/labs/{% prompt 'Lab Name', '', '', '', false, true %}/{% prompt
+      'Result', '', '', '', false, true %}
+    name: Post Lab Result
+    description: ""
+    method: POST
+    body: {}
+    parameters: []
+    headers:
+      - name: user-roles
+        value: patient,doctor
+        description: ""
+        id: pair_0c0f422013da4506b8860395dbd5ae57
+    authentication: {}
+    metaSortKey: -1610592638573.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_fa013fba6ee54ab98a88f8b3d6159616
+    parentId: fld_ac4a94d349de4c13a80e9e778095240c
+    modified: 1610609329897
+    created: 1610593600722
+    url: http://localhost:8080/patients/{% prompt 'Record ID', '', '', '', false,
+      true %}/{% prompt 'Name', '', '', '', false, true %}
+    name: Update Patient Name
+    description: ""
+    method: PUT
+    body: {}
+    parameters: []
+    headers:
+      - name: user-roles
+        value: "{% prompt 'User Roles', 'coma separated values', '', '', false, true %}"
+        description: ""
+        id: pair_ec61a28aae32451da777106da0003da0
+    authentication: {}
+    metaSortKey: -1610592638561
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_84fce4b143464dffa10a89e302909067
+    parentId: fld_ac4a94d349de4c13a80e9e778095240c
+    modified: 1610608370108
+    created: 1610592638536
+    url: http://localhost:8080/patients/{% prompt 'Record ID', '', '', '', false,
+      true %}
+    name: Get Patient
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - name: user-roles
+        value: "{% prompt 'Role List', 'coma separated values', '', '', false, true %}"
+        description: ""
+        id: pair_4eb00d0c3f5f44aeaf93a68efae6d559
+    authentication: {}
+    metaSortKey: -1610592638536
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_069045df51cb46c6a35092c68fdf5270
+    parentId: fld_ac4a94d349de4c13a80e9e778095240c
+    modified: 1610608983403
+    created: 1610593454403
+    url: http://localhost:8080/patients
+    name: All Patients
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - name: user-roles
+        value: "{% prompt 'User Roles', 'coma separated values', '', '', false, true %}"
+        description: ""
+        id: pair_7f8843e105a84465b3deadd7d30bad83
+    authentication: {}
+    metaSortKey: -1610592638486
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_dbb6aab730ac420db803200f71640b83
+    parentId: fld_ac4a94d349de4c13a80e9e778095240c
+    modified: 1610605307537
+    created: 1610594076649
+    url: http://localhost:8080/doctors/{% prompt 'Doctor Name', '', '', '', false,
+      true %}
+    name: Get Doctor
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - name: user-roles
+        value: "{% prompt 'RoleList', 'comma separated values', 'patient', '', false,
+          true %}"
+        description: ""
+        id: pair_7f8843e105a84465b3deadd7d30bad83
+    authentication: {}
+    metaSortKey: -1610243315620.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: env_25ba627299f0634d572f175e7928c65222765864
+    parentId: wrk_39c27bc5d83b4ae68c4806110f438fba
+    modified: 1609869799690
+    created: 1609869726973
+    name: Base Environment
+    data: {}
+    dataPropertyOrder: {}
+    color: null
+    isPrivate: false
+    metaSortKey: 1609869726973
+    _type: environment
+  - _id: jar_25ba627299f0634d572f175e7928c65222765864
+    parentId: wrk_39c27bc5d83b4ae68c4806110f438fba
+    modified: 1609870059794
+    created: 1609869726975
+    name: Default Jar
+    cookies:
+      - key: 62dde4860bb9f9b49c579909c6ba5a49
+        value: 31da4ff966289f9864f05987dae7c360
+        domain: bloxlet-coral-config-infra-test01.dxtst.myriad.com
+        path: /
+        secure: true
+        httpOnly: true
+        hostOnly: true
+        creation: 2021-01-05T18:05:29.400Z
+        lastAccessed: 2021-01-05T18:07:39.794Z
+        id: "32850984883978684"
+    _type: cookie_jar
+  - _id: spc_11e2dff4e5cc489fb2889fa2a6e88eae
+    parentId: wrk_39c27bc5d83b4ae68c4806110f438fba
+    modified: 1609869726950
+    created: 1609869726950
+    fileName: Insomnia
+    contents: ""
+    contentType: yaml
+    _type: api_spec

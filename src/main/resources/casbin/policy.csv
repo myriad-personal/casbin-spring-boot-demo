@@ -1,14 +1,16 @@
 
-# Patient Endpoints
+# Patient Controller
 #--------------------
 p, patient, /patients/:patientId, GET
-p, patient, /patients/:patientId/:patientName, (POST)|(POST)
+p, patient, /patients/:patientId/:patientName, (PUT)|(POST)
 p, doctor, /patients/:patientId/labs/:labName/:result, POST
 p, doctor, /patients, GET
 
-# Doctor Endpoints
+# Doctor Controller
 #-------------------
 p, doctor, /doctors/:name, (GET)|(POST)
 
-g, alice, patient
-g, bob, doctor
+# Role Mappings
+#---------------
+g, resident, doctor
+g, guardian, patient

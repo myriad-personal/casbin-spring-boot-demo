@@ -4,7 +4,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@ConfigurationProperties(prefix = "org.jcasbin")
+@ConfigurationProperties(prefix = "jcasbin")
 public class EnforcerConfigProperties {
 
     private String jdbcUrl;
@@ -16,6 +16,7 @@ public class EnforcerConfigProperties {
     private String jdbcPassword;
 
     private String modelPath;
+    private String policyPath;
 
     public String getJdbcUrl() {
         return jdbcUrl;
@@ -55,6 +56,14 @@ public class EnforcerConfigProperties {
 
     public void setModelPath(String modelPath) {
         this.modelPath = modelPath;
+    }
+
+    public String getPolicyPath() {
+        return policyPath;
+    }
+
+    public void setPolicyPath(String policyPath) {
+        this.policyPath = policyPath;
     }
 
     @Override

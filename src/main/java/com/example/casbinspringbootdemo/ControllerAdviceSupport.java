@@ -27,8 +27,7 @@ public class ControllerAdviceSupport extends ResponseEntityExceptionHandler {
      * @param status    the response status
      * @param errorBody the body for the response
      */
-    protected ResponseEntity handleExceptionInternal(HttpHeaders headers, HttpStatus status, Object errorBody
-    ) {
+    protected ResponseEntity handleExceptionInternal(HttpHeaders headers, HttpStatus status, Object errorBody) {
         return new ResponseEntity(errorBody, headers, status);
     }
 

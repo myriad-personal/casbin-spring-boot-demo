@@ -4,16 +4,17 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import org.springframework.util.Assert;
 
+import java.util.List;
 import java.util.Objects;
 
 @JsonSerialize(as = Patient.class)
 public class Patient implements Profile {
     @JsonProperty
-    private String name;
-    @JsonProperty
     private final String recordId;
     @JsonProperty
     private final PatientHistory patientHistory;
+    @JsonProperty
+    private String name;
 
     public Patient(String name, String recordId) {
         Assert.hasText(name, "invalid null/blank name");
@@ -61,5 +62,9 @@ public class Patient implements Profile {
     @Override
     public int hashCode() {
         return Objects.hash(recordId);
+    }
+
+    public List<String> recordLab(String lab, String result) {
+        return getPatientHistory().recordLab(lab, result).getLabResults(lab);
     }
 }
