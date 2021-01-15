@@ -27,11 +27,11 @@ resident, /patients/123456/labs/BLAH/123, POST
 resident, /patients, GET
 resident, /doctors/Evil, POST
 
-ADMIN, /patients/123456, GET
-ADMIN, /patients/123456/Tom Jones, POST
-ADMIN, /patients/123456/Tommy Jones, PUT
-ADMIN, /patients/123456/labs/BLAH/123, POST
-ADMIN, /patients, GET
-ADMIN, /doctors/Evil, POST
-admin, /doctors/Evil, POST
+bobbydropauth, /patients/123456, GET
+bobbydropauth, /patients/123456/Tom Jones, POST
+bobbydropauth, /patients/123456/Tommy Jones, PUT
+bobbydropauth, /patients/123456/labs/BLAH/123, POST
+bobbydropauth, /patients, GET
+bobbydropauth, /doctors/Evil, POST
+BobbyDropAuth, /doctors/Evil, POST
 

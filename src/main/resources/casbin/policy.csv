@@ -14,3 +14,4 @@ p, doctor, /doctors/:name, (GET)|(POST)
 #---------------
 g, resident, doctor
 g, guardian, patient
+g, bobbydropauth, ADMIN

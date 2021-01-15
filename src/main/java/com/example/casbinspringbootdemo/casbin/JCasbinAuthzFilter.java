@@ -2,11 +2,9 @@ package com.example.casbinspringbootdemo.casbin;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.casbin.jcasbin.main.Enforcer;
-import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
-import org.springframework.util.CollectionUtils;
 import org.springframework.util.StringUtils;
 
 import javax.servlet.*;
@@ -54,7 +52,6 @@ public class JCasbinAuthzFilter implements Filter {
         return false;
     }
 
-    @NotNull
     private List<String> roles(HttpServletRequest request) {
         String user = request.getHeader("user-subject");
         if (!StringUtils.hasText(user)) {
