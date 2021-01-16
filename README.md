@@ -17,9 +17,17 @@ It's a bare-bones demo of how we may leverage Casbin for authorization.
     1. `user-subject`: the value can be whatever
     1. `user-roles`: any set of coma separated values
         * you will want to look at the [policy](src/main/resources/casbin/policy.csv) and the controllers ([PatientController](src/main/java/com/example/casbinspringbootdemo/PatientController.java) and [DoctorController](src/main/java/com/example/casbinspringbootdemo/DoctorController.java)) to see what you're working with.
-        * you should also look at the [JCasbinAuthzFilter](src/main/java/com/example/casbinspringbootdemo/casbin/JCasbinAuthzFilter.java), specifically the `doFilter()` and `authorized()` methods.
+        * you should also look at the [JCasbinAuthzFilter](src/main/java/com/example/casbinspringbootdemo/authz/casbin/JCasbinAuthzFilter.java), specifically the `doFilter()` and `authorized()` methods.
         * finally, you could import the [insomnia_export.yaml](insomnia_export.yaml) into the [Insomnia Rest Client](https://insomnia.rest/download/core/?) and have the requests pre-configured.
     
+## Tools
+
+* [okta-jwt-verifier-java](https://github.com/okta/okta-jwt-verifier-java)
+
+used to enable resource server functionality
+
+* ...
+
 ## Concerns/Questions
 
 1. How can we account for scenarios like `bloxlet-coral-config` that needs an enumeration of user permissions in order to

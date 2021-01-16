@@ -1,4 +1,3 @@
 debug=true
 
-jcasbin.model-path=/home/user/spikes/casbin/casbin-spring-boot-demo/src/main/resources/casbin/model.conf
-jcasbin.policy-path=/home/user/spikes/casbin/casbin-spring-boot-demo/src/main/resources/casbin/policy.csv
+logging.level.com.example=debug

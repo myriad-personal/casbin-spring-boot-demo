@@ -12,6 +12,9 @@ p, doctor, /doctors/:name, (GET)|(POST)
 
 # Role Mappings
 #---------------
-g, resident, doctor
-g, guardian, patient
-g, bobbydropauth, ADMIN
+g, o
+, doctor
+g, myg-techorg-all, patient
+g, myg-all, patient
+g, jholmber, ADMIN
+g, thart, ADMIN
